@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-
+//df
 const movieName = params.get("query");
 
 const movieCardsDiv = document.querySelector(".movie-cards-div");
