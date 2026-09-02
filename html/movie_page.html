@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/movie_page.css" />
+    <script src="/js/movie_page.js" defer></script>
+    <script src="/js/componentes.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <title></title>
+  </head>
+  <body>
+     <div id="header"></div>
+
+
+    <div id="movie-container">
+      <img id="movie-poster" class="movie-poster" alt="movie poster" />
+
+      <div class="movie-info">
+        <div class="title-row">
+          <h1 id="movie-title"></h1>
+
+          <div class="rating">
+            <span id="rating-value"></span>
+            <span id="star">★</span>
+          </div>
+        </div>
+        <span id="release-date">Release Date: </span>
+
+        <div class="info-bubble-row">
+          <div class="info-bubble">
+            <span id="duration"></span>
+          </div>
+
+          <div class="info-bubble">
+            <span id="original-language"></span>
+          </div>
+
+          <div class="info-bubble">
+            <span id="origin-country"></span>
+          </div>
+
+          <div class="info-bubble">
+            <span id="status"></span>
+          </div>
+
+          <button id="play-now-btn">Play Now</button>
+        </div>
+
+        <h2 id="tagline"></h2>
+        <h3 id="description"></h3>
+      </div>
+    </div>
+
+    <div class="genre-bubble-row"></div>
+
+    <iframe id="trailer"></iframe>
+    <img id="backdrop" alt="movie backdrop" />
+
+    <div class="details-row">
+      <div class="details-row-boxes">
+        <span>Budget</span>
+        <span class="secSpan" id="budget">$</span>
+      </div>
+
+      <div class="details-row-boxes">
+        <span>Revenue</span>
+        <span class="secSpan" id="revenue">$</span>
+      </div>
+
+      <div class="details-row-boxes">
+        <span>Popularity</span>
+        <span class="secSpan" id="popularity"></span>
+      </div class="details-row-boxes">
+
+      <div class="details-row-boxes">
+        <span>Vote count</span>
+        <span class="secSpan" id="vote-count"></span>
+      </div>
+    </div>
+
+    <div id="prod-com-backdrop">
+      <h2 id="prod-com">Production Companies</h2>
+      <div class="production-com"></div>
+    </div>
+
+     <div id="footer"></div>
+  </body>
+</html>

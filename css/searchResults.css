@@ -1,0 +1,52 @@
+body {
+  background-color: #24292e;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.movie-card img{
+  height: clamp(200px, 40vw, 350px);
+  width: auto;
+  border-radius: 6px;
+  margin: 20px;
+  box-shadow: 0px 0px 20px #000000;
+}
+
+.movie-cards-div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.movie-card{
+    background-color: #504f57;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #041a86d3;
+  color: rgb(254, 254, 254);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: fantasy;
+  font-size: 16px;
+  font-weight: 50;
+  box-shadow: 0px 0px 5px #00000069;
+  margin-top: 15px;
+}
+.star {
+  color: gold;
+  font-size: 18px;
+}
+/* .movie-title{
+    
+} */
+
+.title-row{
+    display: flex;
+    flex-direction: column;
+}
