@@ -7,7 +7,7 @@ const movieCardsDiv = document.querySelector(".movie-cards-div");
 // eslint-disable-next-line no-unused-vars
 async function loadSearchedMovies(movies) {
   movies.data.results.forEach((movie) => {
-    if (movie.title != "") {
+    if (movie.title != null) {
       console.log(movie.title);
       const movieCard = document.createElement("div");
       
