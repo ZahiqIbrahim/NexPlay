@@ -1,6 +1,7 @@
 #header-div {
   background-color: #1a1e21;
   padding-bottom: 30px;
+  box-shadow: 0px 0px 10px #000000;
 }
 h1 {
   font-family: fantasy;
@@ -8,13 +9,14 @@ h1 {
   font-size: 50px;
   color: rgb(215, 204, 204);
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 100px;
 }
 #title-row {
   background-color: #16191c;
   display: flex;
   gap: 50%;
   margin-bottom: 30px;
+  box-shadow: 0px 0px 10px #000000;
 }
 
 #search-form {
@@ -61,12 +63,14 @@ h1 {
 
 #search-form nav {
   color: #000000;
+  
 }
 
 nav {
   display: flex;
   justify-content: center;
   gap: 30px;
+  
 }
 
 nav a {

@@ -1,0 +1,15 @@
+#footer-text {
+  font-family: fantasy;
+  font-weight: 100;
+  font-size: 30px;
+  color: rgb(215, 204, 204);
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.footer-div {
+  background-color: #16191c;
+  padding: 3%;
+  margin-top: 80px;
+  box-shadow: 0px 0px 10px #000000;
+}
