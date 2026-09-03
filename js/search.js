@@ -27,6 +27,10 @@ async function loadSearchedMovies(movies) {
       movieTitle.textContent = movie.title;
       titleRowDiv.append(movieTitle);
 
+      const dateRatingRow = document.createElement("div");
+      dateRatingRow.classList.add("date-rating-row");
+
+
       const ratingDiv = document.createElement("div");
       
       ratingDiv.classList.add("rating");
@@ -41,7 +45,14 @@ async function loadSearchedMovies(movies) {
       starSpan.textContent = "★";
       ratingDiv.append(starSpan); 
 
-      titleRowDiv.append(ratingDiv);
+     
+
+      const date = document.createElement("span");
+      date.classList.add("date");
+      date.textContent = movie.release_date.split("-")[0];
+      dateRatingRow.append(date);
+       dateRatingRow.append(ratingDiv);
+      titleRowDiv.append(dateRatingRow);
 
       movieCardsDiv.append(movieCard);
     }
