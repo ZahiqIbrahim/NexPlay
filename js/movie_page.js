@@ -1,3 +1,6 @@
+const params = new URLSearchParams(window.location.search);
+const movieId = params.get("query");
+
 const title = document.querySelector("title");
 const movieTitle = document.querySelector("#movie-title");
 const tagline = document.getElementById("tagline");
@@ -18,9 +21,6 @@ const revenue = document.getElementById("revenue");
 const popularity = document.getElementById("popularity");
 const voteCount = document.getElementById("vote-count");
 
-
-
-const movieId = "1368337";
 
 //calling
 

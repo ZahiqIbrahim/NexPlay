@@ -11,9 +11,10 @@ h1 {
   margin-left: 10px;
 }
 #title-row {
+  background-color: #16191c;
   display: flex;
   gap: 50%;
-  margin-left: 10%;
+  margin-bottom: 30px;
 }
 
 #search-form {

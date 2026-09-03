@@ -1,5 +1,4 @@
 const params = new URLSearchParams(window.location.search);
-//df
 const movieName = params.get("query");
 
 const movieCardsDiv = document.querySelector(".movie-cards-div");
@@ -55,6 +54,11 @@ async function loadSearchedMovies(movies) {
       titleRowDiv.append(dateRatingRow);
 
       movieCardsDiv.append(movieCard);
+
+      movieCard.addEventListener('click',() => {
+         window.location.href = `movie_page.html?query=${encodeURIComponent(movie.id)}`
+      });
+
     }
   });
 }
