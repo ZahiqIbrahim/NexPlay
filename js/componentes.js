@@ -27,6 +27,20 @@ async function init() {
   await loadComponent("header", componentPath + "header.html");
   await loadComponent("footer", componentPath + "footer.html");
 
+  // Fix navigation links based on current page location
+  setTimeout(() => {
+    const homeLink = document.getElementById('home-link');
+    const watchLaterLink = document.getElementById('watch-later-link');
+    
+    if (isRootPage) {
+      if (homeLink) homeLink.href = 'index.html';
+      if (watchLaterLink) watchLaterLink.href = 'html/watch_later.html';
+    } else {
+      if (homeLink) homeLink.href = '../index.html';
+      if (watchLaterLink) watchLaterLink.href = 'watch_later.html';
+    }
+  }, 100);
+
   const form = document.getElementById("search-form");
   const formInput = document.getElementById("search-input");
 
@@ -41,18 +55,6 @@ async function init() {
 
     window.location.href = `${htmlPath}searchResults.html?query=${encodeURIComponent(movieName)}`;
   });
-  
-  // Fix navigation links based on current page location
-  const homeLink = document.getElementById('home-link');
-  const watchLaterLink = document.getElementById('watch-later-link');
-  
-  if (isRootPage) {
-    if (homeLink) homeLink.href = 'index.html';
-    if (watchLaterLink) watchLaterLink.href = 'html/watch_later.html';
-  } else {
-    if (homeLink) homeLink.href = '../index.html';
-    if (watchLaterLink) watchLaterLink.href = 'watch_later.html';
-  }
 }
 
 init();
