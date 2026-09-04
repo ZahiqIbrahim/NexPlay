@@ -8,8 +8,24 @@ async function loadComponent(elementId, file) {
 }
 
 async function init() {
-  await loadComponent("header", "/html/components/header.html");
-  await loadComponent("footer", "/html/components/footer.html");
+  const isRootPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+  const componentPath = isRootPage ? 'html/components/' : 'components/';
+  const htmlPath = isRootPage ? 'html/' : '';
+  const cssPath = isRootPage ? 'css/' : '../css/';
+  
+  // Load CSS for header/footer
+  const headerCss = document.createElement('link');
+  headerCss.rel = 'stylesheet';
+  headerCss.href = cssPath + 'header.css';
+  document.head.appendChild(headerCss);
+  
+  const footerCss = document.createElement('link');
+  footerCss.rel = 'stylesheet';
+  footerCss.href = cssPath + 'footer.css';
+  document.head.appendChild(footerCss);
+  
+  await loadComponent("header", componentPath + "header.html");
+  await loadComponent("footer", componentPath + "footer.html");
 
   const form = document.getElementById("search-form");
   const formInput = document.getElementById("search-input");
@@ -23,8 +39,16 @@ async function init() {
       return;
     }
 
-    window.location.href = `/html/searchResults.html?query=${encodeURIComponent(movieName)}`;
+    window.location.href = `${htmlPath}searchResults.html?query=${encodeURIComponent(movieName)}`;
   });
+  
+  // Fix navigation links for root page
+  if (isRootPage) {
+    const homeLink = document.getElementById('home-link');
+    const watchLaterLink = document.getElementById('watch-later-link');
+    if (homeLink) homeLink.href = 'index.html';
+    if (watchLaterLink) watchLaterLink.href = 'html/watch_later.html';
+  }
 }
 
 init();

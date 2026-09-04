@@ -56,7 +56,9 @@ async function loadSearchedMovies(movies) {
       movieCardsDiv.append(movieCard);
 
       movieCard.addEventListener('click',() => {
-         window.location.href = `/html/movie_page.html?query=${encodeURIComponent(movie.id)}`
+         const isRootPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+         const htmlPath = isRootPage ? 'html/' : '';
+         window.location.href = `${htmlPath}movie_page.html?query=${encodeURIComponent(movie.id)}`
       });
 
     }

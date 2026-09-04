@@ -77,11 +77,11 @@ async function loadSearchedMovies(movies) {
 
         localStorage.setItem("watchLater", JSON.stringify(watchLater));
 
-        window.location.href = `/html/watch_later.html`;
+        window.location.href = `watch_later.html`;
       });
 
       movieCard.addEventListener("click", () => {
-        window.location.href = `/html/movie_page.html?query=${encodeURIComponent(movie.data.id)}`;
+        window.location.href = `movie_page.html?query=${encodeURIComponent(movie.data.id)}`;
       });
     }
   });
