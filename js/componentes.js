@@ -42,12 +42,16 @@ async function init() {
     window.location.href = `${htmlPath}searchResults.html?query=${encodeURIComponent(movieName)}`;
   });
   
-  // Fix navigation links for root page
+  // Fix navigation links based on current page location
+  const homeLink = document.getElementById('home-link');
+  const watchLaterLink = document.getElementById('watch-later-link');
+  
   if (isRootPage) {
-    const homeLink = document.getElementById('home-link');
-    const watchLaterLink = document.getElementById('watch-later-link');
     if (homeLink) homeLink.href = 'index.html';
     if (watchLaterLink) watchLaterLink.href = 'html/watch_later.html';
+  } else {
+    if (homeLink) homeLink.href = '../index.html';
+    if (watchLaterLink) watchLaterLink.href = 'watch_later.html';
   }
 }
 
