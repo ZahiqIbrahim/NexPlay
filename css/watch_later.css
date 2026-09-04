@@ -1,0 +1,103 @@
+body {
+  background-color: #24292e;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.movie-cards-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: #2b3036;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px #2b3036;
+}
+
+.movie-card img {
+  display: block;
+  transition: transform 0.5s ease;
+  height: clamp(200px, 40vw, 350px);
+  width: auto;
+  border-radius: 6px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 20px #000000;
+}
+
+.movie-card:hover img {
+  transform: scale(1.07);
+  box-shadow: 0px 0px 40px #000000;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date {
+  display: block;
+  width: 100%;
+}
+
+.movie-title {
+  font-family: fantasy;
+  font-size: 25px;
+  color: rgb(215, 204, 204);
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-family: fantasy;
+  font-size: 20px;
+  color: rgb(167, 159, 159);
+  margin-left: 30px;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #0821a0;
+  color: rgb(254, 254, 254);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: fantasy;
+  font-size: 16px;
+  font-weight: 50;
+  box-shadow: 0px 0px 5px #00000069;
+  margin-top: 0;
+  margin-right: 25px;
+}
+
+.star {
+  color: gold;
+  font-size: 18px;
+}
+
+.remove {
+  background-color: rgb(205, 27, 27);
+  border: none;
+  border-radius: 6px;
+  margin-left: 20px;
+  height: 35px;
+  width: 230px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px #00000069;
+  transition: transform 0.5s ease;
+}
+
+.remove:hover {
+  background-color: rgb(255, 16, 16);
+  transform: scale(1.05);
+}

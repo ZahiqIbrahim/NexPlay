@@ -8,8 +8,8 @@ async function loadComponent(elementId, file) {
 }
 
 async function init() {
-  await loadComponent("header", "components/header.html");
-  await loadComponent("footer", "components/footer.html");
+  await loadComponent("header", "/html/components/header.html");
+  await loadComponent("footer", "/html/components/footer.html");
 
   const form = document.getElementById("search-form");
   const formInput = document.getElementById("search-input");
@@ -23,8 +23,7 @@ async function init() {
       return;
     }
 
-    window.location.href =
-      `searchResults.html?query=${encodeURIComponent(movieName)}`;
+    window.location.href = `/html/searchResults.html?query=${encodeURIComponent(movieName)}`;
   });
 }
 

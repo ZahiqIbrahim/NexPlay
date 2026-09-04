@@ -58,7 +58,7 @@ async function loadSearchedMovies(movie, row) {
       row.append(movieCard);
 
       movieCard.addEventListener("click", () => {
-        window.location.href = `movie_page.html?query=${encodeURIComponent(movie.id)}`;
+        window.location.href = `/html/movie_page.html?query=${encodeURIComponent(movie.id)}`;
       });
     }
   });
