@@ -13,6 +13,7 @@ const country = document.getElementById("origin-country");
 const movieStatus = document.getElementById("status");
 const genres = document.querySelector(".genre-bubble-row");
 const playBtn = document.getElementById("play-now-btn");
+const watchLaterBtn = document.getElementById("watch-later-btn");
 const cardsDiv = document.querySelector(".production-com");
 const trailer = document.getElementById("trailer");
 const backdrop = document.getElementById("backdrop");
@@ -21,6 +22,7 @@ const revenue = document.getElementById("revenue");
 const popularity = document.getElementById("popularity");
 const voteCount = document.getElementById("vote-count");
 
+const msg = document.getElementById("msg");
 
 //calling
 
@@ -54,6 +56,25 @@ async function loadMovie() {
   });
   playBtn.addEventListener("click", () => {
     window.open(movie.data.stream_url, "_blank");
+  });
+
+  watchLaterBtn.addEventListener("click", () => {
+    let watchLater = JSON.parse(localStorage.getItem("watchLater")) || [];
+
+    if (!watchLater.includes(movieId)) {
+      watchLater.push(movieId);
+      localStorage.setItem("watchLater", JSON.stringify(watchLater));
+
+      msg.textContent = "Added to Watch Later!";
+    } else {
+      msg.textContent = "Already in Watch Later!";
+    }
+
+    msg.classList.add("show");
+
+    setTimeout(() => {
+      msg.classList.remove("show");
+    }, 2000);
   });
 
   movie.data.production_companies.forEach((company) => {
@@ -116,9 +137,6 @@ async function getMovie(movieId) {
 }
 
 loadMovie();
-
-
-
 
 const showSimilarMoviesRow = document.getElementById("show-similar-movies-row");
 
@@ -189,14 +207,12 @@ async function getMovies(page) {
   );
   const trendingData = await trendingResponse.json();
 
-
   loadSearchedMovies(trendingData, showSimilarMoviesRow);
 
   addScrollButtons(
     showSimilarMoviesRow.closest(".show-movies-row"),
     showSimilarMoviesRow,
   );
-
 }
 
 getMovies(1);
